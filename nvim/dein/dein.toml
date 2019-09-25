@@ -1,0 +1,82 @@
+# default snippets
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+depends = ['deoplete.nvim']
+
+# snippets
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+hook_add = '''
+  " snippets
+  let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
+  " Plugin key-mappings.
+  " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+  " SuperTab like snippets behavior.
+  " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+  "imap <expr><TAB>
+  " \ pumvisible() ? "\<C-n>" :
+  " \ neosnippet#expandable_or_jumpable() ?
+  " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  " For conceal markers.
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
+'''
+
+# complete
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_event = 'InsertCharPre'
+hook_add = '''
+  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#auto_complete_delay = 0
+  let g:deoplete#auto_complete_start_length = 1
+  let g:deoplete#enable_camel_case = 0
+  let g:deoplete#enable_ignore_case = 0
+  let g:deoplete#enable_refresh_always = 0
+  let g:deoplete#enable_smart_case = 1
+  let g:deoplete#file#enable_buffer_path = 1
+  let g:deoplete#max_list = 10000
+  inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+  \ neosnippet#expandable_or_jumpable() ?
+  \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+on_i = 1
+
+[[plugins]]
+repo = 'https://github.com/cespare/vim-toml'
+
+[[plugins]]
+repo = 'https://github.com/itchyny/lightline.vim'
+hook_add = '''
+  let g:lightline = {
+      \ 'colorscheme': 'wombat'
+      \ }
+'''
+
+[[plugins]]
+repo = 'https://github.com/tyru/caw.vim'
+[[plugins]]
+
+repo = 'https://github.com/luochen1990/rainbow'
+hook_add = 'let g:rainbow_active = 1'
+
+[[plugins]]
+repo = 'https://github.com/thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'https://github.com/simeji/winresizer'
+hook_add = '''
+  "window resize
+  let g:winresizer_vert_resize = 1
+  let g:winresizer_horiz_resize = 1
+'''
+[[plugins]]
+repo = 'cohama/lexima.vim'
+on_i = 1
