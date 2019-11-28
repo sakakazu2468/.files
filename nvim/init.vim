@@ -48,5 +48,7 @@ set shiftwidth=2
 set shortmess-=S
 
 tnoremap <silent> <C-[> <C-\><C-n>
+nnoremap <silent> a i
+nnoremap <silent> i a
 
 autocmd FileType python setlocal completeopt-=preview

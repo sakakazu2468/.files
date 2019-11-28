@@ -1,4 +1,3 @@
-
 set hidden
 
 let g:LanguageClient_serverCommands = {}
@@ -13,7 +12,7 @@ endif
 
 if executable('pyls')
     let g:LanguageClient_serverCommands = {
-        \ 'python': ['pyls']
+        \ 'python': ['/home/sakakazu2468/.local/bin/pyls']
         \ }
 endif
 
@@ -29,4 +28,10 @@ nnoremap <Leader>ld :call LanguageClient_textDocument_definition()<CR>
 nnoremap <Leader>lr :call LanguageClient_textDocument_rename()<CR>
 nnoremap <Leader>lf :call LanguageClient_textDocument_formatting()<CR>
 
-
+set signcolumn=yes
+let g:LanguageClient_hoverPreview = "Never"
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>

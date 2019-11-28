@@ -100,3 +100,7 @@ build = 'bash install.sh'
 hook_add = '''
 source ~/.config/nvim/plugins/LanguageClient-neovim.rc.vim
 '''
+
+#use esc > no ja
+[[plugins]]
+repo = 'vim-scripts/fcitx.vim'
