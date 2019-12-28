@@ -122,3 +122,7 @@ alias py='python3'
 alias ud='sudo apt update'
 alias ug='sudo apt upgrade'
 source $HOME/.cargo/env
+alias iv='vi'
+
+# anaconda3_path
+export PATH=~/anaconda3/bin:$PATH

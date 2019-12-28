@@ -104,3 +104,12 @@ source ~/.config/nvim/plugins/LanguageClient-neovim.rc.vim
 #use esc > no ja
 [[plugins]]
 repo = 'vim-scripts/fcitx.vim'
+
+
+#previm
+[[plugins]]
+repo = 'https://github.com/previm/previm.git'
+
+#neoinclude
+[[plugins]]
+repo = 'https://github.com/Shougo/neoinclude.vim.git'
