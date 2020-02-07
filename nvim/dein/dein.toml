@@ -75,8 +75,7 @@ repo = 'https://github.com/simeji/winresizer'
 hook_add = '''
   "window resize
   let g:winresizer_vert_resize = 1
-  let g:winresizer_horiz_resize = 1
-'''
+  let g:winresizer_horiz_resize = 1 '''
 [[plugins]]
 repo = 'cohama/lexima.vim'
 on_i = 1
@@ -104,47 +103,3 @@ repo = 'https://github.com/previm/previm.git'
 [[plugins]]
 repo = 'https://github.com/Shougo/neoinclude.vim.git'
 
-#vim-lsp-settings
-[[plugins]]
-repo = 'https://github.com/mattn/vim-lsp-settings.git'
-
-# lsp
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-build = 'bash install.sh'
-rev = 'next'
-hook_add = '''
-    " set completefunc=LanguageClient#complete
-    let s:node = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
-    let s:julia_exe = '/usr/local/bin/julia'
-    let s:julia_lsp_script = expand('~') . '/.config/nvim/plugins/normal/startlsp.jl'
-    let g:LanguageClient_serverCommands = {
-        \ 'c': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
-        "\ 'cpp': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
-        \ 'cpp': ['clangd'],
-        \ 'python': ['pyls'],
-        "\ 'java': ['/usr/local/bin/jdtls', '-data', getcwd()]
-        \ 'julia': [s:julia_exe, '--startup-file=no', s:julia_lsp_script],
-    \ }
-    " not stop completion $ & /
-    set hidden
-    set signcolumn=yes
-    let g:LanguageClient_hoverPreview = "Never"
-    nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-    " Or map each action separately
-    nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-    nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-    nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-    command! LSPFormat :call LanguageClient#textDocument_formatting()
-    let g:LanguageClient_diagnosticsDisplay = {
-     \   1:{
-     \         "name": "Error",
-     \         "texthl": "ALEError",
-     \         "signText": "💩",
-     \         "signTexthl": "ALEErrorSign",
-     \         "virtualTexthl": "Error",
-     \     },
-    \ }
-      '''
-[[plugins]]
-repo = 'https://github.com/prabirshrestha/vim-lsp.git'
