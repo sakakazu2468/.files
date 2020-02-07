@@ -319,8 +319,8 @@ alias -g GI='| grep -ri'
 # エイリアス
 alias lst='ls -ltr --color=auto'
 alias ls='ls --color=auto'
-alias la='ls -la --color=auto'
-alias ll='ls -l --color=auto'
+alias la='ls -a --color=auto'
+alias ll='ls -la --color=auto'
 
 alias du="du -Th"
 alias df="df -Th"
