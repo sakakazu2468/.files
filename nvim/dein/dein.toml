@@ -99,6 +99,10 @@ repo = 'vim-scripts/fcitx.vim'
 [[plugins]]
 repo = 'https://github.com/previm/previm.git'
 
+#open-browser
+[[Plugins]]
+repo = 'https://github.com/tyru/open-browser.vim.git'
+
 #neoinclude
 [[plugins]]
 repo = 'https://github.com/Shougo/neoinclude.vim.git'
