@@ -347,6 +347,7 @@ alias res='exec $SHELL'
 alias py='python3'
 alias ud='sudo apt update'
 alias ug='sudo apt upgrade'
+alias cd..='cd ..'
 source $HOME/.cargo/env
 alias iv='vi'
 
