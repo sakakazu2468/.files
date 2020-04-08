@@ -107,3 +107,29 @@ repo = 'https://github.com/tyru/open-browser.vim.git'
 [[plugins]]
 repo = 'https://github.com/Shougo/neoinclude.vim.git'
 
+#latex_auto_compile
+repo = 'lervag/vimtex'
+hook_add = '''
+  "部分的にコンパイルする設定
+  function! s:previewTex() range
+  let l:tmp = @@
+  silent normal gvy
+  let l:selected = split(@@, "\n")
+  let @@ = l:tmp
+
+  " \"\\documentclass{tADR2e}",
+  "" let l:template1 = ["\\documentclass[a4paper]{jsarticle}",
+  " \"\\usepackage[dvipdfmx]{graphicx}",
+  " \"\\usepackage{amsmath,amssymb,bm}",
+  " \"\\pagestyle{empty}",
+  let l:template1 = ["\\documentclass{tADR2e}",
+  \"\\begin{document}"]
+  let l:template2 = ["\\end{document}"]
+
+  let l:output_file = "preview.tex"
+  call writefile(extend(extend(l:template1, l:selected), template2), l:output_file)
+  call system("latexmk preview.tex")
+  call system("mupdf preview.pdf")
+  endfunction
+  autocmd FileType tex
+  \ | vnoremap <buffer> <localleader>la :call <SID>previewTex()<CR>'''

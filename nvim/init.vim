@@ -18,7 +18,7 @@ let &runtimepath = s:dein_repo_dir .",". &runtimepath
 
 let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein/dein.toml'
 if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
+  call dein#begin(s:dein_dir) 
   call dein#load_toml(s:toml_file)
   call dein#end()
   call dein#save_state()
@@ -57,4 +57,4 @@ autocmd FileType python setlocal completeopt-=preview
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 
 " Previm
-let g:previm_open_cmd = ''
+let g:previm_open_cmd = 'evince'
