@@ -1,3 +1,6 @@
 [user]
 	name = sakakazu2468
 	email = sakakazu2468@icloud.com
+[init]
+	defalutBranch = main
+	defaultBranch = main
