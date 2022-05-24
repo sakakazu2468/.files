@@ -1,39 +1,41 @@
-" reset augroup
-augroup MyAutoCmd
-autocmd!
-augroup END
-
+"dein Scripts-----------------------------
 if &compatible
-  set nocompatible
+  set nocompatible               " Be iMproved
 endif
 
-" install dein.vim
-let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
-let s:dein_dir = s:cache_home . '/dein'
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-if !isdirectory(s:dein_repo_dir)
-  call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
-endif
-let &runtimepath = s:dein_repo_dir .",". &runtimepath
+" Required:
+set runtimepath+=/home/kzk/.cache/dein/repos/github.com/Shougo/dein.vim
 
-let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein/dein.toml'
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir) 
-  call dein#load_toml(s:toml_file)
-  call dein#end()
-  call dein#save_state()
-endif
-if has('vim_starting') && dein#check_install()
+" Required:
+call dein#begin('/home/kzk/.cache/dein')
+
+
+" Let dein manage dein
+" Required:
+call dein#add('/home/kzk/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+" Add or remove your plugins here like this:
+call dein#load_toml('~/.config/nvim/toml/dein.toml', {'lazy': 0})
+call dein#load_toml('~/.config/nvim/toml/dein_lazy.toml', {'lazy': 1})
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
   call dein#install()
 endif
-let g:python3_host_prog = '/usr/bin/python3'
-set clipboard+=unnamedplus
 
-"color
-syntax on
+"End dein Scripts-------------------------
+
+set clipboard=unnamed  "yank した文字列をクリップボードにコピー
+set hls                "検索した文字をハイライトする
 
 "indent
-filetype plugin indent on 
 set autoindent
 set smartindent
 
@@ -47,6 +49,8 @@ set tabstop+=2
 set shiftwidth=2
 set shortmess-=S
 
+set updatetime=100
+
 tnoremap <silent> <C-[> <C-\><C-n>
 nnoremap <silent> <C-[> <C-@>
 
@@ -55,5 +59,3 @@ autocmd FileType python setlocal completeopt-=preview
 
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 
-" Previm
-let g:previm_open_cmd = 'evince'
