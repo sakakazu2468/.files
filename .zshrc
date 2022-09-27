@@ -360,6 +360,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 alias pipallupgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
+export MECABRC='/etc/mecabrc'
 
 # -----------------------------
 # Golang

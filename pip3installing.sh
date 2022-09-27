@@ -10,3 +10,4 @@ pip3 install statsmodels
 pip3 install pydse
 pip3 install jupyterlab
 pip3 install jupyterlab-lsp
+pip3 install networkx
