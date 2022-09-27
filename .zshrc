@@ -252,6 +252,7 @@ alias cd../../='cd ../../'
 alias iv='vi'
 alias ks='ls'
 alias bro='browse .'
+alias re='./remote.sh'
 
 alias sl='ls --color=auto'
 

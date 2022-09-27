@@ -49,7 +49,11 @@ set shortmess-=S
 
 tnoremap <silent> <C-[> <C-\><C-n>
 nnoremap <silent> <C-[> <C-@>
-
+" カーソルを表示行で移動
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up>   gk
 autocmd FileType python setlocal completeopt-=preview
 
 
