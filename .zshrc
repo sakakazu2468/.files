@@ -248,6 +248,7 @@ alias python='python3'
 alias ud='sudo apt update'
 alias ug='sudo apt upgrade'
 alias cd..='cd ..'
+alias cd,,='cd ..'
 alias cd../../='cd ../../'
 alias iv='vi'
 alias ks='ls'
@@ -311,7 +312,24 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "rupa/z"
 zplug "sorin-ionescu/prezto"
-source ~/git/z/z.sh
+
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
+
+
+source ~/z/z.sh
 #zplug "b4b4r07/enhancd", use:init.sh
 #zplug "junegunn/fzf-bin", as:command, from:gh-r, file:fzf
 
@@ -343,6 +361,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 alias pipallupgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
+export MECABRC='/etc/mecabrc'
 
 # -----------------------------
 # Golang
@@ -395,3 +414,11 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# deno initial settings
+export DENO_INSTALL="/home/kzk/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+#jupyter
+# export PATH="$HOME/.local/lib/python3.8/bin:$PATH"
+export PATH="$HOME/.local/lib/python3.8/site-packages:$PATH"
+export PATH=~/.local/bin:$PATH
