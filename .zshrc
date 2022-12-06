@@ -415,7 +415,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # deno initial settings
-export DENO_INSTALL="/home/kzk/.deno"
+export DENO_INSTALL="/home/sakakazu2468/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 #jupyter
