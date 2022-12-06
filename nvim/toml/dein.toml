@@ -70,13 +70,12 @@ repo = 'https://github.com/vim-airline/vim-airline.git'
 hook_add = '''
   let g:airline_theme = "luna"
   let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
   '''
 
 #vim-airline-theme
 [[plugins]]
 repo = 'https://github.com/vim-airline/vim-airline-themes.git'
-
-
 #html-css
 [[plugins]]
 repo = 'https://github.com/mattn/emmet-vim.git'
@@ -90,7 +89,6 @@ repo = 'https://github.com/hail2u/vim-css3-syntax.git'
 repo = 'https://github.com/pangloss/vim-javascript.git'
 [[plugins]]
 repo = 'https://github.com/kchmck/vim-coffee-script.git'
-
 #indentLine
 [[plugins]]
 repo = 'https://github.com/Yggdroot/indentLine'

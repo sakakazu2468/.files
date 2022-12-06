@@ -4,15 +4,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/home/kzk/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/sakakazu2468/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin('/home/kzk/.cache/dein')
+call dein#begin('/home/sakakazu2468/.cache/dein')
 
 
 " Let dein manage dein
 " Required:
-call dein#add('/home/kzk/.cache/dein/repos/github.com/Shougo/dein.vim')
+call dein#add('/home/sakakazu2468/.cache/dein/repos/github.com/Shougo/dein.vim')
 
 " Add or remove your plugins here like this:
 call dein#load_toml('~/.config/nvim/toml/dein.toml', {'lazy': 0})
@@ -32,7 +32,7 @@ endif
 
 "End dein Scripts-------------------------
 
-set clipboard=unnamed  "yank した文字列をクリップボードにコピー
+set clipboard=unnamedplus  "yank した文字列をクリップボードにコピー
 set hls                "検索した文字をハイライトする
 
 "indent
@@ -51,7 +51,7 @@ set shortmess-=S
 
 set updatetime=100
 
-tnoremap <silent> <C-[> <C-\><C-n>
+tnoremap <ESC> <C-\><C-n>
 nnoremap <silent> <C-[> <C-@>
 " カーソルを表示行で移動
 nnoremap j gj
@@ -63,3 +63,6 @@ autocmd FileType python setlocal completeopt-=preview
 
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 
+nnoremap <S-Tab> <Plug>AirlineSelectPrevTab
+nnoremap <Tab> <Plug>AirlineSelectNextTab
+nnoremap :dd :bd

@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhistcnt =3
-let g:netrw_dirhist_3='/home/kzk/.config/nvim/dein/repos/github.com/Shougo'
-let g:netrw_dirhist_2='/home/kzk/.config/nvim/dein/repos/github.com'
-let g:netrw_dirhist_1='/home/kzk/.config/nvim/dein/repos'
+let g:netrw_dirhist_3='/home/sakakazu2468/.config/nvim/dein/repos/github.com/Shougo'
+let g:netrw_dirhist_2='/home/sakakazu2468/.config/nvim/dein/repos/github.com'
+let g:netrw_dirhist_1='/home/sakakazu2468/.config/nvim/dein/repos'
