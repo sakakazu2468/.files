@@ -19,9 +19,7 @@
       \ },
       \ })
 
- call ddc#custom#patch_global('sourceParams', {
-      \ 'around': {'maxSize': 500},
-      \ })
+ call ddc#custom#patch_global('sources', ['around'])
 
  inoremap <silent><expr> <TAB>
       \ ddc#map#pum_visible() ? '<C-n>' :
@@ -45,6 +43,12 @@
 [[plugins]]
  repo = 'Shougo/ddc-matcher_head'
  on_source = 'ddc.vim'
+ hook_source = '''
+ call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+      \     'matchers': ['matcher_head'],
+      \ }})
+'''
 
 [[plugins]]
  repo = 'Shougo/ddc-sorter_rank'

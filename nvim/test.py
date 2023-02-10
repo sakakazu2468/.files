@@ -4,3 +4,5 @@ if d:
     d = 20
 for a in v:
     x += 10
+
+class
